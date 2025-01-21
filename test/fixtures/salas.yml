@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  capacidade: 1
+  num_sala: MyString
+  predio: one
+
+two:
+  capacidade: 1
+  num_sala: MyString
+  predio: two

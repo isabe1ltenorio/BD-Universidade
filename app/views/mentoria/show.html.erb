@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mentorium %>
+
+<div>
+  <%= link_to "Edit this mentorium", edit_mentorium_path(@mentorium) %> |
+  <%= link_to "Back to mentoria", mentoria_path %>
+
+  <%= button_to "Destroy this mentorium", @mentorium, method: :delete %>
+</div>

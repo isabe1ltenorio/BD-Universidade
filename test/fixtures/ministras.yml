@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  semestre: 1
+  ano: 1
+  curso: one
+  secao: one
+  instrutor: one
+
+two:
+  semestre: 1
+  ano: 1
+  curso: two
+  secao: two
+  instrutor: two

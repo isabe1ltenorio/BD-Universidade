@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Secaos" %>
+
+<h1>Secaos</h1>
+
+<div id="secaos">
+  <% @secaos.each do |secao| %>
+    <%= render secao %>
+    <p>
+      <%= link_to "Show this secao", secao %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New secao", new_secao_path %>

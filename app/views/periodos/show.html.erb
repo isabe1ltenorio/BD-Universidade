@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @periodo %>
+
+<div>
+  <%= link_to "Edit this periodo", edit_periodo_path(@periodo) %> |
+  <%= link_to "Back to periodos", periodos_path %>
+
+  <%= button_to "Destroy this periodo", @periodo, method: :delete %>
+</div>

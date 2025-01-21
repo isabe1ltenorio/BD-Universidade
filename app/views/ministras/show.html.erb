@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ministra %>
+
+<div>
+  <%= link_to "Edit this ministra", edit_ministra_path(@ministra) %> |
+  <%= link_to "Back to ministras", ministras_path %>
+
+  <%= button_to "Destroy this ministra", @ministra, method: :delete %>
+</div>

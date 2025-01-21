@@ -1,0 +1,37 @@
+<%= form_with(model: secao) do |form| %>
+  <% if secao.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(secao.errors.count, "error") %> prohibited this secao from being saved:</h2>
+
+      <ul>
+        <% secao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ano, style: "display: block" %>
+    <%= form.number_field :ano %>
+  </div>
+
+  <div>
+    <%= form.label :num_sala, style: "display: block" %>
+    <%= form.number_field :num_sala %>
+  </div>
+
+  <div>
+    <%= form.label :curso_id, style: "display: block" %>
+    <%= form.text_field :curso_id %>
+  </div>
+
+  <div>
+    <%= form.label :periodo_id, style: "display: block" %>
+    <%= form.text_field :periodo_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

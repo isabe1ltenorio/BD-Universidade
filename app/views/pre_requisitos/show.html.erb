@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pre_requisito %>
+
+<div>
+  <%= link_to "Edit this pre requisito", edit_pre_requisito_path(@pre_requisito) %> |
+  <%= link_to "Back to pre requisitos", pre_requisitos_path %>
+
+  <%= button_to "Destroy this pre requisito", @pre_requisito, method: :delete %>
+</div>

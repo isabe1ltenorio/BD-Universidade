@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  predio: one
+  nome_depto: MyString
+  orcamento: 9.99
+
+two:
+  predio: two
+  nome_depto: MyString
+  orcamento: 9.99

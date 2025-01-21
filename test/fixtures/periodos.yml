@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2025-01-20
+  hora_inicial: 2025-01-20 22:40:07
+  hora_final: 2025-01-20 22:40:07
+
+two:
+  data: 2025-01-20
+  hora_inicial: 2025-01-20 22:40:07
+  hora_final: 2025-01-20 22:40:07

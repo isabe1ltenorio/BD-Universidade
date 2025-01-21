@@ -1,0 +1,22 @@
+<%= form_with(model: predio) do |form| %>
+  <% if predio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(predio.errors.count, "error") %> prohibited this predio from being saved:</h2>
+
+      <ul>
+        <% predio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome_predio, style: "display: block" %>
+    <%= form.text_field :nome_predio %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

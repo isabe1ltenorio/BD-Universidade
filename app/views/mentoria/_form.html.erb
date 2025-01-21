@@ -1,0 +1,32 @@
+<%= form_with(model: mentorium) do |form| %>
+  <% if mentorium.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mentorium.errors.count, "error") %> prohibited this mentorium from being saved:</h2>
+
+      <ul>
+        <% mentorium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nota, style: "display: block" %>
+    <%= form.text_field :nota %>
+  </div>
+
+  <div>
+    <%= form.label :aluno_id, style: "display: block" %>
+    <%= form.text_field :aluno_id %>
+  </div>
+
+  <div>
+    <%= form.label :instrutor_id, style: "display: block" %>
+    <%= form.text_field :instrutor_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

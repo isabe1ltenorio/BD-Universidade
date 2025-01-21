@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @universidade %>
+
+<div>
+  <%= link_to "Edit this universidade", edit_universidade_path(@universidade) %> |
+  <%= link_to "Back to universidades", universidades_path %>
+
+  <%= button_to "Destroy this universidade", @universidade, method: :delete %>
+</div>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing predio" %>
+
+<h1>Editing predio</h1>
+
+<%= render "form", predio: @predio %>
+
+<br>
+
+<div>
+  <%= link_to "Show this predio", @predio %> |
+  <%= link_to "Back to predios", predios_path %>
+</div>

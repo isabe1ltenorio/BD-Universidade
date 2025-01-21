@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @secao %>
+
+<div>
+  <%= link_to "Edit this secao", edit_secao_path(@secao) %> |
+  <%= link_to "Back to secaos", secaos_path %>
+
+  <%= button_to "Destroy this secao", @secao, method: :delete %>
+</div>

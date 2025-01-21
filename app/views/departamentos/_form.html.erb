@@ -1,0 +1,32 @@
+<%= form_with(model: departamento) do |form| %>
+  <% if departamento.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(departamento.errors.count, "error") %> prohibited this departamento from being saved:</h2>
+
+      <ul>
+        <% departamento.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :predio_id, style: "display: block" %>
+    <%= form.text_field :predio_id %>
+  </div>
+
+  <div>
+    <%= form.label :nome_depto, style: "display: block" %>
+    <%= form.text_field :nome_depto %>
+  </div>
+
+  <div>
+    <%= form.label :orcamento, style: "display: block" %>
+    <%= form.text_field :orcamento %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

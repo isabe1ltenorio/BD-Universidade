@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Periodos" %>
+
+<h1>Periodos</h1>
+
+<div id="periodos">
+  <% @periodos.each do |periodo| %>
+    <%= render periodo %>
+    <p>
+      <%= link_to "Show this periodo", periodo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New periodo", new_periodo_path %>

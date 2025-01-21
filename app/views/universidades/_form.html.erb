@@ -1,0 +1,22 @@
+<%= form_with(model: universidade) do |form| %>
+  <% if universidade.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(universidade.errors.count, "error") %> prohibited this universidade from being saved:</h2>
+
+      <ul>
+        <% universidade.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome_universidade, style: "display: block" %>
+    <%= form.text_field :nome_universidade %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

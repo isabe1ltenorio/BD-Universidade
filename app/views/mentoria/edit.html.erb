@@ -1,0 +1,12 @@
+<% content_for :title, "Editing mentorium" %>
+
+<h1>Editing mentorium</h1>
+
+<%= render "form", mentorium: @mentorium %>
+
+<br>
+
+<div>
+  <%= link_to "Show this mentorium", @mentorium %> |
+  <%= link_to "Back to mentoria", mentoria_path %>
+</div>

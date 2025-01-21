@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Mentoria" %>
+
+<h1>Mentoria</h1>
+
+<div id="mentoria">
+  <% @mentoria.each do |mentorium| %>
+    <%= render mentorium %>
+    <p>
+      <%= link_to "Show this mentorium", mentorium %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mentorium", new_mentorium_path %>

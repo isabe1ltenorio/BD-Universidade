@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @predio %>
+
+<div>
+  <%= link_to "Edit this predio", edit_predio_path(@predio) %> |
+  <%= link_to "Back to predios", predios_path %>
+
+  <%= button_to "Destroy this predio", @predio, method: :delete %>
+</div>

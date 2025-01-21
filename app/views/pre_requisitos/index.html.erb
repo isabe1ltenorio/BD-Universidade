@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Pre requisitos" %>
+
+<h1>Pre requisitos</h1>
+
+<div id="pre_requisitos">
+  <% @pre_requisitos.each do |pre_requisito| %>
+    <%= render pre_requisito %>
+    <p>
+      <%= link_to "Show this pre requisito", pre_requisito %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pre requisito", new_pre_requisito_path %>
