@@ -1,0 +1,112 @@
+/* assets/stylesheets/theme.css */
+
+:root {
+    --lavanda: #957DAD; /* Lavender base color */
+    --branco: #FFFFFF;   /* White */
+    --cinza-claro: #F2F2F2; /* Light gray */
+    --lavanda-claro: #CAB8FF; /* Light lavender */
+}
+
+body {
+    background-color: var(--cinza-claro);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: var(--lavanda);
+    color: var(--branco);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.actions {
+    display: flex;
+    color: var(--branco);
+    flex-direction: column;
+    align-items: center;
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--lavanda);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.btn.highlight {
+    background-color: var(--lavanda);; /* Keep green highlight for now */
+    color: var(--branco); /* Text white for buttons of highlight */
+}
+
+.btn.highlight:hover {
+    background-color: var(--lavanda);; /* Darker green on hover */
+}
+
+/* You can adjust or replace the `.form-container` section later if needed */
+
+.form-container {
+    /* ... existing styles ... */
+}
+
+.field label {
+    color: var(--lavanda);
+    font-weight: bold;
+}
+
+.field input[type=email],
+.field input[type=password] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--lavanda-claro);
+    border-radius: 4px;
+}
+
+.actions input[type=submit] {
+    background-color: var(--lavanda);
+    color: var(--branco);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.actions input[type=submit]:hover {
+    background-color: var(--lavanda-claro);
+}
+
+a {
+    color: var(--lavanda);
+    text-decoration: none;
+}
