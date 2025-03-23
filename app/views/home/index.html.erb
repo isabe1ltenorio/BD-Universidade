@@ -1,6 +1,28 @@
-<%= stylesheet_link_tag 'application', media: 'all' %>
-<%= stylesheet_link_tag 'index' %>
+<head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'index' %>
 
-<h1>CHUPA EU CONSEGUI</h1>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
 
-<button>CONSULTA 1</button>
+<h1>Bem-Vindo ao gerenciamento de universidades</h1>
+
+<div class="login-container">
+  <%= form_with url: universidades_path, method: :get, local: true, class: 'login-form' do |form| %>
+    <div>
+      <label for="usuario">Usuário:</label>
+      <%= form.text_field :usuario, id: 'usuario', class: 'input-field' %>
+    </div>
+
+    <div>
+      <label for="senha">Senha:</label>
+      <%= form.password_field :senha, id: 'senha', class: 'input-field' %>
+    </div>
+
+    <div class="button-container">
+      <%= form.submit 'Entrar', class: 'login-button' %>
+    </div>
+  <% end %>
+</div>
+
+

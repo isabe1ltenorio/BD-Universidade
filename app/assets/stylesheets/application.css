@@ -1,0 +1,281 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /
+}
+
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    color: #76a8e5;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    position: relative;
+    display: inline-block;
+
+    text-shadow:
+            1px 1px 2px rgba(0, 0, 0, 0.10),
+            2px 2px 4px rgba(0, 0, 0, 0.1),
+            3px 3px 6px rgba(0, 0, 0, 0.05);
+
+    background: linear-gradient(145deg, #89beee, #71a1ee);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    text-shadow:
+            1px 1px 3px rgba(0, 0, 0, 0.5),
+            2px 2px 5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 5px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    transition: all 0.3s;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #0056b3;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+li a:hover {
+    color: #003d82;
+}
+
+li.active {
+    background-color: #0056b3;
+    color: white;
+}
+
+.btn-voltar, .link-right, .login-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-voltar {
+    background-color: #007bff;
+}
+
+.btn-voltar:hover {
+    background-color: #0056b3;
+}
+
+.link-right {
+    float: right;
+    background-color: #007bff;
+}
+
+.link-right:hover {
+    background-color: #0056b3;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #007BFF;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    margin: 40px auto;
+    max-width: 400px;
+    width: 90%;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input-field,
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus,
+form input:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-star;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+div {
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    li {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .btn-voltar, .link-right {
+        width: 90%;
+        text-align: center;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .btn-voltar, .link-right {
+        width: 100%;
+    }
+
+    form {
+        width: 95%;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+#new-universidade-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+#new-universidade-btn:hover {
+    background-color: #0056b3;
+}
+
+#universidades {
+    width: 90%;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}

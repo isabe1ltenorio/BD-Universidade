@@ -4,13 +4,27 @@
 
 <h1>Universidades</h1>
 
+<!-- Botão de cadastro alinhado à esquerda -->
+<%= link_to "Cadastrar nova universidade", new_universidade_path, id: 'new-universidade-btn' %>
+
 <div id="universidades">
-  <% @universidades.each do |universidade| %>
-    <%= render universidade %>
-    <p>
-      <%= link_to "Show this universidade", universidade %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+    <tr>
+      <th>Nome da Universidade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @universidades.each do |universidade| %>
+      <tr>
+        <td><%= link_to universidade.nome_universidade, universidade %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New universidade", new_universidade_path %>
+
+
+
+
