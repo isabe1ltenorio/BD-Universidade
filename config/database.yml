@@ -11,5 +11,5 @@ development:
   database: universidade
   pool: 5
   username: postgres
-  password: 110572
+  password: 123456
   host: localhost
