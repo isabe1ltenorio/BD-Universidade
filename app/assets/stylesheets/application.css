@@ -1,4 +1,5 @@
 
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -279,3 +280,142 @@ table td a {
 table td a:hover {
     text-decoration: underline;
 }
+
+.notice {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.universidade-container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin: 20px auto;
+    border-left: 5px solid #007bff;
+}
+
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border: none;
+    text-align: center;
+}
+
+.btn-edit {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-edit:hover {
+    background: linear-gradient(145deg, #0056b3, #004099);
+}
+
+.btn-back {
+    background: linear-gradient(145deg, #6c757d, #5a6268);
+    color: white;
+}
+
+.btn-back:hover {
+    background: linear-gradient(145deg, #5a6268, #495057);
+}
+
+.btn-danger {
+    background: linear-gradient(145deg, #dc3545, #b02a37);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(145deg, #b02a37, #891f28);
+}
+
+@media (max-width: 600px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Estilizando o ícone do menu */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    z-index: 1000;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    color: #0056b3;
+}
+
+/* Menu lateral */
+#sidebar {
+    height: 90%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0056b3;
+    overflow-x: hidden;
+    transition: 0.0s;
+    padding-top: 60px;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar a:hover {
+    background-color: #003d82;
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+.close-btn:hover {
+    color: #ffdddd;
+}
+/* Até aqui */

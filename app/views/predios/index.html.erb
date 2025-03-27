@@ -4,6 +4,23 @@
 
 <h1>Predios</h1>
 
+<span class="menu-icon" onclick="toggleMenu()">☰</span>
+
+<div id="sidebar">
+  <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">✖</a>
+  <a href="/universidades">Início</a>
+  <a href="/alunos">Alunos</a>
+  <a href="/cursos">Cursos</a>
+  <a href="/departamentos">Departamentos</a>
+  <a href="/instrutors">Instrutores</a>
+  <a href="/ministras">Ministras</a>
+  <a href="/periodos">Períodos</a>
+  <a href="/predios">Prédios</a>
+  <a href="/pre_requisitos">Pré-Requisitos</a>
+  <a href="/salas">Salas</a>
+  <a href="/secaos">Seções</a>
+</div>
+
 <div id="predios">
   <% @predios.each do |predio| %>
     <%= render predio %>

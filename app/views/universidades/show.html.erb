@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
-<%= render @universidade %>
+<div class="universidade-container">
+  <%= render @universidade %>
 
-<div>
-  <%= link_to "Edit this universidade", edit_universidade_path(@universidade) %> |
-  <%= link_to "Back to universidades", universidades_path %>
+  <div class="action-buttons">
+    <%= link_to "Editar Universidade", edit_universidade_path(@universidade), class: "btn btn-edit" %>
+    <%= link_to "Voltar", universidades_path, class: "btn btn-back" %>
 
-  <%= button_to "Destroy this universidade", @universidade, method: :delete %>
+    <%= button_to "Excluir Universidade", @universidade, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
+
+
