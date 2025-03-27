@@ -2,8 +2,6 @@
 
 <% content_for :title, "Alunos" %>
 
-<h1>Alunos</h1>
-
 <span class="menu-icon" onclick="toggleMenu()">☰</span>
 
 <div id="sidebar">
@@ -21,13 +19,53 @@
   <a href="/secaos">Seções</a>
 </div>
 
+<h1>Alunos</h1>
+
+<%= link_to "Cadastrar aluno", new_aluno_path, id: 'new-universidade-btn' %>
+
 <div id="alunos">
-  <% @alunos.each do |aluno| %>
-    <%= render aluno %>
-    <p>
-      <%= link_to "Show this aluno", aluno %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+    <tr>
+      <th>Nome do Aluno</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @alunos.each do |aluno| %>
+      <tr>
+        <td class="nome-aluno"><%= aluno.nome_aluno %></td>
+        <td>
+          <button onclick="showOptions(<%= aluno.id %>)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg></button>
+          <div id="options-menu-<%= aluno.id %>" class="options-menu" style="display: none;">
+            <button onclick="viewDetails(<%= aluno.id %>)">Visualizar</button>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New aluno", new_aluno_path %>
+<script>
+    function toggleMenu() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
+
+    function showOptions(alunoId) {
+        var optionsMenu = document.getElementById("options-menu-" + alunoId);
+        optionsMenu.style.display = optionsMenu.style.display === "block" ? "none" : "block";
+    }
+
+    function viewDetails(alunoId) {
+        window.location.href = "/alunos/" + alunoId;
+    }
+</script>
+
+
+
