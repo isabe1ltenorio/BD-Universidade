@@ -25,7 +25,7 @@ class UniversidadesController < ApplicationController
 
     respond_to do |format|
       if @universidade.save
-        format.html { redirect_to @universidade, notice: "Universidade was successfully created." }
+        format.html { redirect_to @universidade, notice: "Universidade cadastrada com sucesso!" }
         format.json { render :show, status: :created, location: @universidade }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class UniversidadesController < ApplicationController
   def update
     respond_to do |format|
       if @universidade.update(universidade_params)
-        format.html { redirect_to @universidade, notice: "Universidade was successfully updated." }
+        format.html { redirect_to @universidade, notice: "Universidade atualizada com sucesso!" }
         format.json { render :show, status: :ok, location: @universidade }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class UniversidadesController < ApplicationController
     @universidade.destroy!
 
     respond_to do |format|
-      format.html { redirect_to universidades_path, status: :see_other, notice: "Universidade was successfully destroyed." }
+      format.html { redirect_to universidades_path, status: :see_other, notice: "Universidade excluída com sucesso!" }
       format.json { head :no_content }
     end
   end

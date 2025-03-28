@@ -2,9 +2,27 @@
 
 <% content_for :title, "Universidades" %>
 
+
+<span class="menu-icon" onclick="toggleMenu()">☰</span>
+
+<div id="sidebar">
+  <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">✖</a>
+  <a href="/universidades">Início</a>
+  <a href="/alunos">Alunos</a>
+  <a href="/cursos">Cursos</a>
+  <a href="/departamentos">Departamentos</a>
+  <a href="/instrutors">Instrutores</a>
+  <a href="/ministras">Ministras</a>
+  <a href="/periodos">Períodos</a>
+  <a href="/predios">Prédios</a>
+  <a href="/pre_requisitos">Pré-Requisitos</a>
+  <a href="/salas">Salas</a>
+  <a href="/secaos">Seções</a>
+</div>
+
+
 <h1>Universidades</h1>
 
-<!-- Botão de cadastro alinhado à esquerda -->
 <%= link_to "Cadastrar nova universidade", new_universidade_path, id: 'new-universidade-btn' %>
 
 <div id="universidades">
@@ -14,6 +32,16 @@
       <th>Nome da Universidade</th>
     </tr>
     </thead>
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+    </script>
     <tbody>
     <% @universidades.each do |universidade| %>
       <tr>
