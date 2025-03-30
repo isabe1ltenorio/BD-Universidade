@@ -2,9 +2,9 @@
 
 <%= render @curso %>
 
-<div>
-  <%= link_to "Edit this curso", edit_curso_path(@curso) %> |
-  <%= link_to "Back to cursos", cursos_path %>
+<div class="action-buttons">
+  <%= link_to "Editar curso", edit_curso_path(@curso), class: "btn btn-edit" %> |
+  <%= link_to "Voltar", cursos_path, class: "btn btn-back" %>
 
-  <%= button_to "Destroy this curso", @curso, method: :delete %>
+  <%= button_to "Excluir esse curso", @curso, method: :delete, class: "btn btn-danger"  %>
 </div>

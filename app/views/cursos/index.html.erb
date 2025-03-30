@@ -2,8 +2,6 @@
 
 <% content_for :title, "Cursos" %>
 
-<h1>Cursos</h1>
-
 <span class="menu-icon" onclick="toggleMenu()">☰</span>
 
 <div id="sidebar">
@@ -22,13 +20,33 @@
   <a href="/secaos">Seções</a>
 </div>
 
-<div id="cursos">
-  <% @cursos.each do |curso| %>
-    <%= render curso %>
-    <p>
-      <%= link_to "Show this curso", curso %>
-    </p>
-  <% end %>
-</div>
+<h1>Cursos</h1>
 
-<%= link_to "New curso", new_curso_path %>
+<%= link_to "Cadastrar novo curso", new_curso_path, id: 'new-universidade-btn' %>
+
+<div id="cursos">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Curso</th>
+      </tr>
+    </thead>
+    <script>
+      function toggleMenu() {
+          var sidebar = document.getElementById("sidebar");
+          if (sidebar.style.width === "250px") {
+              sidebar.style.width = "0";
+          } else {
+              sidebar.style.width = "250px";
+          }
+      }
+    </script>
+    <tbody>
+      <% @cursos.each do |curso| %>
+        <tr>
+          <td><%= link_to curso.nome_curso, curso %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
