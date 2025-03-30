@@ -1,5 +1,5 @@
-class MentoriaController < ApplicationController
-  before_action :set_mentorium, only: %i[ show edit update destroy ]
+class MentoriasController  < ApplicationController
+  before_action :set_mentorium, only: %i[show edit update destroy]
 
   # GET /mentoria or /mentoria.json
   def index
@@ -12,7 +12,7 @@ class MentoriaController < ApplicationController
 
   # GET /mentoria/new
   def new
-    @mentorium = Mentoria.new
+    @mentoria = Mentoria.new
   end
 
   # GET /mentoria/1/edit
@@ -21,15 +21,15 @@ class MentoriaController < ApplicationController
 
   # POST /mentoria or /mentoria.json
   def create
-    @mentorium = Mentoria.new(mentorium_params)
+    @mentoria = Mentoria.new(mentorium_params)
 
     respond_to do |format|
-      if @mentorium.save
-        format.html { redirect_to @mentorium, notice: "Mentoria was successfully created." }
-        format.json { render :show, status: :created, location: @mentorium }
+      if @mentoria.save
+        format.html { redirect_to @mentoria, notice: "Mentoria was successfully created." }
+        format.json { render :show, status: :created, location: @mentoria }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @mentorium.errors, status: :unprocessable_entity }
+        format.json { render json: @mentoria.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +37,19 @@ class MentoriaController < ApplicationController
   # PATCH/PUT /mentoria/1 or /mentoria/1.json
   def update
     respond_to do |format|
-      if @mentorium.update(mentorium_params)
-        format.html { redirect_to @mentorium, notice: "Mentoria was successfully updated." }
-        format.json { render :show, status: :ok, location: @mentorium }
+      if @mentoria.update(mentorium_params)
+        format.html { redirect_to @mentoria, notice: "Mentoria was successfully updated." }
+        format.json { render :show, status: :ok, location: @mentoria }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @mentorium.errors, status: :unprocessable_entity }
+        format.json { render json: @mentoria.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /mentoria/1 or /mentoria/1.json
   def destroy
-    @mentorium.destroy!
+    @mentoria.destroy!
 
     respond_to do |format|
       format.html { redirect_to mentoria_path, status: :see_other, notice: "Mentoria was successfully destroyed." }
@@ -60,11 +60,11 @@ class MentoriaController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mentorium
-      @mentorium = Mentoria.find(params.expect(:id))
+      @mentoria = Mentoria.find(params[:id])  # Corrigido para usar `params[:id]`
     end
 
     # Only allow a list of trusted parameters through.
     def mentorium_params
-      params.expect(mentorium: [ :nota, :aluno_id, :instrutor_id ])
+      params.require(:mentoria).permit(:nota, :aluno_id, :instrutor_id)  # Corrigido o permit
     end
 end
