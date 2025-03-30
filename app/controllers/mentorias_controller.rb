@@ -3,7 +3,7 @@ class MentoriasController  < ApplicationController
 
   # GET /mentoria or /mentoria.json
   def index
-    @mentoria = Mentoria.all
+    @mentorias = Mentoria.all
   end
 
   # GET /mentoria/1 or /mentoria/1.json

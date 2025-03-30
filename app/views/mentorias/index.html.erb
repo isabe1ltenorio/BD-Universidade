@@ -2,15 +2,34 @@
 
 <% content_for :title, "Mentoria" %>
 
+<span class="menu-icon" onclick="toggleMenu()">☰</span>
+
+<div id="sidebar">
+  <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">✖</a>
+  <a href="/universidades">Início</a>
+  <a href="/alunos">Alunos</a>
+  <a href="/cursos">Cursos</a>
+  <a href="/departamentos">Departamentos</a>
+  <a href="/instrutors">Instrutores</a>
+  <a href="/ministras">Ministras</a>
+  <a href="/mentorias">Mentorias</a>
+  <a href="/periodos">Períodos</a>
+  <a href="/predios">Prédios</a>
+  <a href="/pre_requisitos">Pré-Requisitos</a>
+  <a href="/salas">Salas</a>
+  <a href="/secaos">Seções</a>
+</div>
 <h1>Mentoria</h1>
 
 <div id="mentoria">
-  <% @mentoria.each do |mentorium| %>
-    <%= render mentorium %>
+  <% @mentorias.each do |mentorium| %>
+    <%= render partial: 'mentorium', locals: { mentorium: mentorium } %>
     <p>
-      <%= link_to "Show this mentorium", mentorium %>
+      <%= link_to "Show this mentoria", mentoria_path(mentorium) %>
     </p>
+
   <% end %>
 </div>
+
 
 <%= link_to "New Mentoria", new_mentoria_path %>
