@@ -1,10 +1,9 @@
-<%= form_with(model: mentorium) do |form| %>
-  <% if mentorium.errors.any? %>
+<%= form_with(model: @mentoria, url: mentorias_path) do |form| %>
+  <% if @mentoria.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(mentorium.errors.count, "error") %> prohibited this mentorium from being saved:</h2>
-
+      <h2><%= pluralize(@mentoria.errors.count, "erro") %> proibiu essa mentoria de ser salva:</h2>
       <ul>
-        <% mentorium.errors.each do |error| %>
+        <% @mentoria.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

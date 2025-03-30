@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :ministras
   resources :secaos
   resources :periodos
-  resources :mentoria
+  resources :mentorias
   resources :instrutors
   resources :alunos
   resources :pre_requisitos
@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   resources :universidades
 
   get "up" => "rails/health#show", as: :rails_health_check
-
 
 end
