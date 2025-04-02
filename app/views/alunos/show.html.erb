@@ -4,9 +4,9 @@
   <%= render @aluno %>
 
   <div class="action-buttons">
-    <%= link_to "Editar Aluno", edit_aluno_path(@aluno), class: "btn btn-edit" %>
+    <%= link_to "Editar", edit_aluno_path(@aluno), class: "btn btn-edit" %>
     <%= link_to "Voltar", alunos_path, class: "btn btn-back" %>
 
-    <%= button_to "Excluir Aluno", @aluno, method: :delete, class: "btn btn-danger" %>
+    <%= button_to "Excluir", @aluno, method: :delete, class: "btn btn-danger" %>
   </div>
 </div>
