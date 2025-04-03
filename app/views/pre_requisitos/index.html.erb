@@ -23,12 +23,50 @@
 </div>
 
 <div id="pre_requisitos">
-  <% @pre_requisitos.each do |pre_requisito| %>
-    <%= render pre_requisito %>
-    <p>
-      <%= link_to "Show this pre requisito", pre_requisito %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Pré-Requisito</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pre_requisitos.each do |pre_requisito| %>
+        <tr>
+          <td>
+            <button onclick="showOptions(<%= pre_requisito.id %>)">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/>
+              </svg>
+            </button>
+            <div id="options-menu-<%= pre_requisito.id %>" class="options-menu" style="display: none;">
+              <button onclick="viewDetails(<%= pre_requisito.id %>)">Visualizar</button>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New pre requisito", new_pre_requisito_path %>
+<%= link_to "Novo Pre Requisito", new_pre_requisito_path, id: 'new-universidade-btn' %>
+
+<script>
+    function toggleMenu() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
+
+    function showOptions(preRequisitoId) {
+        var optionsMenu = document.getElementById("options-menu-" + preRequisitoId);
+        optionsMenu.style.display = optionsMenu.style.display === "block" ? "none" : "block";
+    }
+
+    function viewDetails(preRequisitoId) {
+        window.location.href = "/pre_requisitos/" + preRequisitoId;
+    }
+</script>

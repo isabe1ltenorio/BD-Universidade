@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
-<%= render @secao %>
+<div class="aluno-container">
+  <%= render @secao %>
 
-<div>
-  <%= link_to "Edit this secao", edit_secao_path(@secao) %> |
-  <%= link_to "Back to secaos", secaos_path %>
+  <div class="action-buttons">
+    <%= link_to "Editar", edit_secao_path(@secao), class: "btn btn-edit" %>
+    <%= link_to "Voltar", secaos_path, class: "btn btn-back" %>
 
-  <%= button_to "Destroy this secao", @secao, method: :delete %>
+    <%= button_to "Excluir", @secao, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>

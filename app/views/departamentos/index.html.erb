@@ -23,12 +23,51 @@
 </div>
 
 <div id="departamentos">
-  <% @departamentos.each do |departamento| %>
-    <%= render departamento %>
-    <p>
-      <%= link_to "Show this departamento", departamento %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Departamento</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @departamentos.each do |departamento| %>
+        <tr>
+          <td class="nome-departamento"><%= departamento.nome_depto%></td>
+          <td>
+            <button onclick="showOptions(<%= departamento.id %>)">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/>
+              </svg>
+            </button>
+            <div id="options-menu-<%= departamento.id %>" class="options-menu" style="display: none;">
+              <button onclick="viewDetails(<%= departamento.id %>)">Visualizar</button>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New departamento", new_departamento_path %>
+<%= link_to "Novo departamento", new_departamento_path, id: 'new-universidade-btn' %>
+
+<script>
+    function toggleMenu() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
+
+    function showOptions(departamentoId) {
+        var optionsMenu = document.getElementById("options-menu-" + departamentoId);
+        optionsMenu.style.display = optionsMenu.style.display === "block" ? "none" : "block";
+    }
+
+    function viewDetails(departamentoId) {
+        window.location.href = "/departamentos/" + departamentoId;
+    }
+</script>
