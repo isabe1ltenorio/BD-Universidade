@@ -1,12 +1,12 @@
-<% content_for :title, "Editing secao" %>
+<% content_for :title, "Editar secao" %>
 
-<h1>Editing secao</h1>
+<h1>Editar secao</h1>
 
 <%= render "form", secao: @secao %>
 
 <br>
 
 <div>
-  <%= link_to "Show this secao", @secao %> |
-  <%= link_to "Back to secaos", secaos_path %>
+  <%= link_to "Visualizar", @secao %> |
+  <%= link_to "Voltar", secaos_path %>
 </div>
