@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
-<%= render @predio %>
+<div class="aluno-container">
+  <%= render @predio %>
 
-<div>
-  <%= link_to "Edit this predio", edit_predio_path(@predio) %> |
-  <%= link_to "Back to predios", predios_path %>
+  <div class="action-buttons">
+    <%= link_to "Editar", edit_predio_path(@predio), class: "btn btn-edit" %>
+    <%= link_to "Voltar", predios_path, class: "btn btn-back" %>
 
-  <%= button_to "Destroy this predio", @predio, method: :delete %>
+    <%= button_to "Excluir", @predio, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
