@@ -23,12 +23,51 @@
 </div>
 
 <div id="periodos">
-  <% @periodos.each do |periodo| %>
-    <%= render periodo %>
-    <p>
-      <%= link_to "Show this periodo", periodo %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Período</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @periodos.each do |periodo| %>
+        <tr>
+          <td class="nome-periodo"><%= periodo.data %></td>
+          <td>
+            <button onclick="showOptions(<%= periodo.id %>)">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/>
+              </svg>
+            </button>
+            <div id="options-menu-<%= periodo.id %>" class="options-menu" style="display: none;">
+              <button onclick="viewDetails(<%= periodo.id %>)">Visualizar</button>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New periodo", new_periodo_path %>
+<%= link_to "Novo Periodo", new_periodo_path, id: 'new-universidade-btn' %>
+
+<script>
+    function toggleMenu() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
+
+    function showOptions(periodoId) {
+        var optionsMenu = document.getElementById("options-menu-" + periodoId);
+        optionsMenu.style.display = optionsMenu.style.display === "block" ? "none" : "block";
+    }
+
+    function viewDetails(periodoId) {
+        window.location.href = "/periodos/" + periodoId;
+    }
+</script>
