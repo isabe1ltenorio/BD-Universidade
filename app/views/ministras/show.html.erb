@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
-<%= render @ministra %>
+<div class="aluno-container">
+  <%= render @ministra %>
 
-<div>
-  <%= link_to "Edit this ministra", edit_ministra_path(@ministra) %> |
-  <%= link_to "Back to ministras", ministras_path %>
+  <div class="action-buttons">
+    <%= link_to "Editar", edit_ministra_path(@ministra), class: "btn btn-edit" %>
+    <%= link_to "Voltar", ministras_path, class: "btn btn-back" %>
 
-  <%= button_to "Destroy this ministra", @ministra, method: :delete %>
+    <%= button_to "Excluir", @ministra, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
